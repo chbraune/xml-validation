@@ -1,4 +1,4 @@
-package com.exp.xml.validation;
+package com.exp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

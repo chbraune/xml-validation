@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="FACS">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="SPOT" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="seqno" type="xs:positiveInteger"/>
+                            <xs:element name="pos" type="xs:integer"/>
+                            <xs:element name="invno" type="xs:positiveInteger"/>
+                            <xs:element name="mb" type="xs:string" minOccurs="0"/>
+                            <xs:element name="subsno" type="xs:positiveInteger"/>
+                            <xs:element name="copy" type="xs:nonNegativeInteger"/>
+                            <xs:element name="link" type="xs:integer"/>
+                            <xs:element name="datefrom" type="xs:date"/>
+                            <xs:element name="dateto" type="xs:date"/>
+                            <xs:element name="weekfrom">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:minInclusive value="1"/>
+                                        <xs:maxInclusive value="53"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="bez" type="xs:string"/>
+                            <xs:element name="weekto">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:minInclusive value="1"/>
+                                        <xs:maxInclusive value="53"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="quantity" type="xs:positiveInteger"/>
+                            <xs:element name="unit" type="xs:string"/>
+                            <xs:element name="vat">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+                                        <xs:minInclusive value="0"/>
+                                        <xs:maxInclusive value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="decimals">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                        <xs:maxInclusive value="6"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="unitprice" type="xs:decimal"/>
+                            <xs:element name="memo" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
